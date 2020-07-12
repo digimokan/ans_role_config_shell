@@ -16,11 +16,11 @@ Configure a core set of files sourced for _bash_, _zsh_, and _sh_.
 
 ## Purpose
 
-* Put all _bash_/_zsh_/_sh_ __common__ environment variables into
+* Put all _bash_, _zsh_, _sh_ __common__ environment variables into
   `common/en_vars` file.
-* Put all _bash_/_zsh_/_sh_ __common__ interactive functions/aliases into
+* Put all _bash_, _zsh_, _sh_ __common__ interactive functions/aliases into
   `common/aliases` file.
-* Put all _bash_/_zsh_/_sh_ __common__ logout actions into
+* Put all _bash_, _zsh_, _sh_ __common__ logout actions into
   `common/logout_actions` file.
 * Put all __non-common__ configuration into `bash/en_vars`, `zsh/en_vars`, etc
   files.
