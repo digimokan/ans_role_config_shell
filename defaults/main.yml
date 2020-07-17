@@ -12,7 +12,7 @@ bash_specific_dir_name: ".bash"
 zsh_specific_dir_name: ".zsh"
 
 # directory name of dir containing ksh-specific files
-zsh_specific_dir_name: ".ksh"
+ksh_specific_dir_name: ".ksh"
 
 # directory name of dir containing sh-specific files
 sh_specific_dir_name: ".sh"
