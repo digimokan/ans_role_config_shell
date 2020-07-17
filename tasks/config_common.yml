@@ -1,13 +1,13 @@
 - name: "Configure ~{{ filepath }}, for common env-vars"
-    blockinfile:
-      path: "{{ filepath }}"
-      insertbefore: BOF
-      block: |
-        # export all common environment vars in this file:
-      marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
-      owner: "{{ user_name }}"
-      create: yes
-      state: present
+  blockinfile:
+    path: "{{ filepath }}"
+    insertbefore: BOF
+    block: |
+      # export all common environment vars in this file:
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
+    owner: "{{ user_name }}"
+    create: yes
+    state: present
   vars:
     filepath: "~{{ user_name }}/.{{ shell_common_dir_name }}/{{ env_var_filename }}"
 
