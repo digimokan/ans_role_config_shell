@@ -1,4 +1,4 @@
-- name: "Configure ~{{ filepath }}, for common env-vars"
+- name: "Configure '{{ filepath }}', for common env-vars"
   blockinfile:
     path: "{{ filepath }}"
     insertbefore: BOF
@@ -9,5 +9,5 @@
     create: yes
     state: present
   vars:
-    filepath: "~{{ user_name }}/.{{ shell_common_dir_name }}/{{ env_var_filename }}"
+    filepath: "~{{ user_name }}/{{ shell_common_dir_name }}/{{ env_var_filename }}"
 
