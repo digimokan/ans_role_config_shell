@@ -1,6 +1,6 @@
 # ans-role-shell-common
 
-Configure a core set of files sourced for _bash_, _zsh_, and _sh_.
+Configure a core set of files sourced for _bash_, _zsh_, _ksh_, and _sh_.
 
 [![Release](https://img.shields.io/github/release/digimokan/ans-role-shell-common.svg?label=release)](https://github.com/digimokan/ans-role-shell-common/releases/latest "Latest Release Notes")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=license)](LICENSE.md "Project License")
@@ -16,17 +16,17 @@ Configure a core set of files sourced for _bash_, _zsh_, and _sh_.
 
 ## Purpose
 
-* Put all _bash_, _zsh_, _sh_ __common__ environment variables into
-  `common/en_vars` file.
-* Put all _bash_, _zsh_, _sh_ __common__ interactive functions/aliases into
-  `common/aliases` file.
-* Put all _bash_, _zsh_, _sh_ __common__ logout actions into
-  `common/logout_actions` file.
-* Put all __non-common__ configuration into `bash/en_vars`, `zsh/en_vars`, etc
-  files.
+* Put all _bash_, _zsh_, _ksh_, _sh_ __common__ environment variables into
+  `~/.shell-common/en_vars` file.
+* Put all _bash_, _zsh_, _ksh_, _sh_ __common__ interactive functions/aliases
+  into `~/.shell-common/aliases` file.
+* Put all _bash_, _zsh_, __ksh_, sh_ __common__ logout actions into
+  `~/.shell-common/logout_actions` file.
+* Put all __non-common__ configuration into `~/.bash/en_vars`, `~/.zsh/en_vars`,
+  etc files.
 * Make the __non-common__ files source the __common__ files.
-* Make the shell-specific files (`.bashrc`, `.bash_profile`, `.zshrc`, etc)
-  source the __non-common__ files.
+* Make the shell-specific files (`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`,
+  etc) source the __non-common__ files.
 * Configure correct behavior for all combinations of login, non-login,
   interactive, and non-interactive shell invocations.
 

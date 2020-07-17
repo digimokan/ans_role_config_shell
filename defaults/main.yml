@@ -1,0 +1,35 @@
+################################################################################
+# DIRECTORIES
+################################################################################
+
+# directory name of dir containing shell-common files
+shell_common_dir_name: ".shell-common"
+
+# directory name of dir containing bash-specific files
+bash_specific_dir_name: ".bash"
+
+# directory name of dir containing zsh-specific files
+zsh_specific_dir_name: ".zsh"
+
+# directory name of dir containing ksh-specific files
+zsh_specific_dir_name: ".ksh"
+
+# directory name of dir containing sh-specific files
+sh_specific_dir_name: ".sh"
+
+################################################################################
+# FILENAMES
+################################################################################
+
+# filename for environment variables files
+env_var_filename: "env_vars"
+
+# filename for aliases/functions files
+aliases_filename: "aliases"
+
+# filename for logout-actions files
+logout_actions_filename: "logout_actions"
+
+# filename for standard-env-config files
+std_env_filename: "std_env_config"
+
