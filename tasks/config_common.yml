@@ -1,13 +1,52 @@
-- name: "Configure '{{ filepath }}', for common env-vars"
-  blockinfile:
-    path: "{{ filepath }}"
-    insertbefore: BOF
-    block: |
-      # export all common environment vars in this file:
-    marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
-    owner: "{{ user_name }}"
-    create: yes
-    state: present
+# - name: "Configure '{{ filepath }}', for common env-vars"
+#   blockinfile:
+#     path: "{{ filepath }}"
+#     insertbefore: BOF
+#     block: |
+#       # export all common/global environment vars in this file:
+#     marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
+#     owner: "{{ user_name }}"
+#     create: yes
+#     state: present
+#   become: true
+#   become_user: root
+#   vars:
+#     filepath: "/home/{{ user_name }}/{{ shell_common_dir_name }}/{{ env_var_filename }}"
+
+# - name: "Configure '{{ filepath }}', for common env-vars"
+#   blockinfile:
+#     path: "{{ filepath }}"
+#     insertbefore: BOF
+#     block: |
+#       # set $ENV to load aliases for interactive system shell:
+#       export ENV=/home/{{ user_name }}/{{ shell_common_dir_name }}/{{ aliases_filename }}
+#       # set $BASH_ENV to load aliases for non-interactive bash shell:
+#       export ENV=/home/{{ user_name }}/{{ bash_specific_dir_name }}/{{ std_env_filename }}
+#     marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
+#     owner: "{{ user_name }}"
+#     group: "{{ user_name }}"
+#     mode: '644'
+#     create: yes
+#     state: present
+#   become: true
+#   become_user: root
+#   vars:
+#     filepath: "/home/{{ user_name }}/{{ shell_common_dir_name }}/{{ std_env_filename }}"
+
+- name: "Configure common env-vars"
+  include_tasks: add_core_file.yml
   vars:
-    filepath: "~{{ user_name }}/{{ shell_common_dir_name }}/{{ env_var_filename }}"
+    filepath: "{{ shell_common_dir_path }}/{{ env_var_filename }}"
+    block_lines: |
+      # export all common/global environment vars in this file:
+
+- name: "Configure $ENV/$BASH_ENV var sourcing"
+  include_tasks: add_core_file.yml
+  vars:
+    filepath: "{{ shell_common_dir_path }}/{{ std_env_filename }}"
+    block_lines: |
+      # set $ENV to load aliases for interactive system shell:
+      export ENV={{ shell_common_dir_path }}/{{ aliases_filename }}
+      # set $BASH_ENV to load aliases for non-interactive bash shell:
+      export BASH_ENV={{ bash_specific_dir_path }}/{{ std_env_filename }}
 

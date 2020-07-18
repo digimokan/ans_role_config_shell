@@ -1,0 +1,14 @@
+- name: "Configure '{{ filepath }}'"
+  blockinfile:
+    path: "{{ filepath }}"
+    insertbefore: BOF
+    block: "{{ block_lines }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: '644'
+    create: yes
+    state: present
+  become: true
+  become_user: root
+

@@ -2,20 +2,23 @@
 # DIRECTORIES
 ################################################################################
 
+# user's home directory
+home_dir: "/home/{{ user_name }}"
+
 # directory name of dir containing shell-common files
-shell_common_dir_name: ".shell-common"
+shell_common_dir_path: "{{ home_dir }}/.shell-common"
 
 # directory name of dir containing bash-specific files
-bash_specific_dir_name: ".bash"
+bash_specific_dir_path: "{{ home_dir }}/.bash"
 
 # directory name of dir containing zsh-specific files
-zsh_specific_dir_name: ".zsh"
+zsh_specific_dir_path: "{{ home_dir }}/.zsh"
 
 # directory name of dir containing ksh-specific files
-ksh_specific_dir_name: ".ksh"
+ksh_specific_dir_path: "{{ home_dir }}/.ksh"
 
 # directory name of dir containing sh-specific files
-sh_specific_dir_name: ".sh"
+sh_specific_dir_path: "{{ home_dir }}/.sh"
 
 ################################################################################
 # FILENAMES
@@ -30,6 +33,6 @@ aliases_filename: "aliases"
 # filename for logout-actions files
 logout_actions_filename: "logout_actions"
 
-# filename for standard-env-config files
-std_env_filename: "std_env_config"
+# filename for ENV config files
+std_env_filename: "std_env"
 
