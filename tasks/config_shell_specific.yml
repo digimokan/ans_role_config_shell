@@ -1,0 +1,35 @@
+- name: "Configure {{ shell_name }} environment vars sourcing"
+  include_tasks: add_core_file.yml
+  vars:
+    filepath: "{{ shell_specific_dir_path }}/{{ env_var_filename }}"
+    block_lines: |
+      # source common environment vars:
+      . {{ shell_common_dir_path }}/{{ env_var_filename }}
+      # add additional {{ shell_name }}-specific env var exports in this file:
+
+- name: "Configure {{ shell_name }} interactive aliases/functions sourcing"
+  include_tasks: add_core_file.yml
+  vars:
+    filepath: "{{ shell_specific_dir_path }}/{{ aliases_filename }}"
+    block_lines: |
+      # source common interactive aliases/functions:
+      . {{ shell_common_dir_path }}/{{ aliases_filename }}
+      # add additional {{ shell_name }}-specific aliases/functions in this file:
+
+- name: "Configure {{ shell_name }} logout actions sourcing"
+  include_tasks: add_core_file.yml
+  vars:
+    filepath: "{{ shell_specific_dir_path }}/{{ logout_actions_filename }}"
+    block_lines: |
+      # source common logout actions:
+      . {{ shell_common_dir_path }}/{{ logout_actions_filename }}
+      # add additional {{ shell_name }}-specific logout actions in this file:
+
+- name: "Configure {{ shell_name }} $ENV, $BASH_ENV var sourcing"
+  include_tasks: add_core_file.yml
+  vars:
+    filepath: "{{ shell_specific_dir_path }}/{{ std_env_filename }}"
+    block_lines: |
+      # source common $ENV, $BASH_ENV configuration:
+      . {{ shell_common_dir_path }}/{{ std_env_filename }}
+

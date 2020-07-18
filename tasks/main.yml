@@ -1,3 +1,11 @@
 - name: "Configure common files to source"
   include_tasks: config_common.yml
 
+- name: "Configure shell-specific files to source"
+  include_tasks: config_shell_specific.yml
+  vars:
+    shell_name: "{{ item[0] }}"
+    shell_specific_dir_path: "{{ item[1] }}"
+  loop:
+    - "{{ ['bash', bash_specific_dir_path] }}"
+
