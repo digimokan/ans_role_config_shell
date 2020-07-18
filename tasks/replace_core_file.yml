@@ -1,0 +1,11 @@
+- name: "Replace '{{ filepath }}'"
+  template:
+    dest: "{{ filepath }}"
+    src: "{{ file_template }}"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: "{{ file_mode }}"
+    force: yes
+  become: true
+  become_user: root
+

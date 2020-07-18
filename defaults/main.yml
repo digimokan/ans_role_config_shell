@@ -36,3 +36,10 @@ logout_actions_filename: "logout_actions"
 # filename for ENV config files
 std_env_filename: "std_env"
 
+################################################################################
+# MISC
+################################################################################
+
+# file mode for all newly-created common/shell-specific files
+file_mode: '644'
+

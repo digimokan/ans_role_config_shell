@@ -1,0 +1,16 @@
+# DO NOT MAKE CHANGES TO THIS FILE.
+# THIS FILE IS MANAGED BY ANSIBLE.
+# See https://github.com/digimokan/ans-role-shell-common
+
+# source $ENV, $BASH_ENV configuration
+. {{ bash_specific_dir_path }}/{{ std_env_filename }}
+
+# prevent $BASH_ENV sourcing in future calls
+BASH_ENV=
+
+# source environment vars
+. {{ bash_specific_dir_path }}/{{ env_var_filename }}
+
+# source aliases/functions, but only for interactive shells
+[ "${PS1}" ] && . {{ bash_specific_dir_path }}/{{ aliases_filename }}
+

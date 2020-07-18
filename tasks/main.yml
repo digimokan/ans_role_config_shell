@@ -1,7 +1,7 @@
-- name: "Configure common files to source"
+- name: "Configure new common files to source"
   include_tasks: config_common.yml
 
-- name: "Configure shell-specific files to source"
+- name: "Configure new shell-specific files to source"
   include_tasks: config_shell_specific.yml
   vars:
     shell_name: "{{ item[0] }}"
@@ -11,4 +11,7 @@
     - "{{ ['zsh', zsh_specific_dir_path] }}"
     - "{{ ['ksh', ksh_specific_dir_path] }}"
     - "{{ ['sh', sh_specific_dir_path] }}"
+
+- name: "Configure standard bash files (.bash_profile, .bashrc)"
+  include_tasks: config_bash.yml
 

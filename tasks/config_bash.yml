@@ -1,0 +1,6 @@
+- name: "Replace .bash_profile: make it source only core common files"
+  include_tasks: replace_core_file.yml
+  vars:
+    filepath: "{{ home_dir }}/.bash_profile"
+    file_template: 'bash_profile.j2'
+
