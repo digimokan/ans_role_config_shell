@@ -1,18 +1,18 @@
-- name: "Configure common environment vars sourcing"
+- name: "Define common environment vars"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
     block_lines: |
       # append common/global environment vars below this ansible-managed block.
 
-- name: "Configure common interactive aliases/functions/behavior sourcing"
+- name: "Configure common interactive aliases and console-behavior"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ interactive_filename }}"
     block_lines: |
-      # append common interactive aliases/functions/behavior below this ansible-managed block.
+      # append common interactive aliases, console-behavior below this ansible-managed block.
 
-- name: "Configure common logout actions sourcing"
+- name: "Configure common logout actions"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ logout_actions_filename }}"

@@ -1,4 +1,4 @@
-- name: "Configure {{ shell_name }} environment vars sourcing"
+- name: "Define {{ shell_name }} environment vars"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_specific_dir_path }}/{{ env_vars_filename }}"
@@ -7,16 +7,16 @@
       . "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
       # append {{ shell_name }}-specific env var exports below this ansible-managed block.
 
-- name: "Configure {{ shell_name }} interactive aliases/functions/behavior sourcing"
+- name: "Configure {{ shell_name }} interactive aliases, console-behavior"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: |
-      # source common interactive aliases/functions/behavior:
+      # source common interactive aliases, console-behavior:
       . "{{ shell_common_dir_path }}/{{ interactive_filename }}"
-      # append {{ shell_name }}-specific aliases/functions/behavior below this ansible-managed block.
+      # append {{ shell_name }}-specific aliases and console-behavior below this ansible-managed block.
 
-- name: "Configure {{ shell_name }} logout actions sourcing"
+- name: "Configure {{ shell_name }} logout actions"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_specific_dir_path }}/{{ logout_actions_filename }}"

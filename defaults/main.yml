@@ -30,7 +30,7 @@ sh_specific_dir_path: "{{ config_dir_path }}/sh"
 # filename for environment variables files
 env_vars_filename: "env_vars"
 
-# filename for interactive aliases/functions/behavior files
+# filename for interactive aliases and console-behavior files
 interactive_filename: "interactive"
 
 # filename for logout-actions files
