@@ -5,20 +5,23 @@
 # user's home directory
 home_dir: "/home/{{ user_name }}"
 
+# top-level shell-config directory path
+config_dir_path: "{{ home_dir }}/.shell-config"
+
 # directory name of dir containing shell-common files
-shell_common_dir_path: "{{ home_dir }}/.shell-common"
+shell_common_dir_path: "{{ config_dir_path }}/shell-common"
 
 # directory name of dir containing bash-specific files
-bash_specific_dir_path: "{{ home_dir }}/.bash"
+bash_specific_dir_path: "{{ config_dir_path }}/bash"
 
 # directory name of dir containing zsh-specific files
-zsh_specific_dir_path: "{{ home_dir }}/.zsh"
+zsh_specific_dir_path: "{{ config_dir_path }}/zsh"
 
 # directory name of dir containing ksh-specific files
-ksh_specific_dir_path: "{{ home_dir }}/.ksh"
+ksh_specific_dir_path: "{{ config_dir_path }}/ksh"
 
 # directory name of dir containing sh-specific files
-sh_specific_dir_path: "{{ home_dir }}/.sh"
+sh_specific_dir_path: "{{ config_dir_path }}/sh"
 
 ################################################################################
 # FILENAMES
