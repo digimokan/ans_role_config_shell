@@ -6,14 +6,14 @@
 # See https://github.com/digimokan/ans-role-shell-common
 
 # source $ENV, $BASH_ENV configuration
-. {{ bash_specific_dir_path }}/{{ std_env_filename }}
+. "{{ bash_specific_dir_path }}/{{ std_env_filename }}"
 
 # prevent $BASH_ENV sourcing in future calls
 BASH_ENV=
 
 # source environment vars
-. {{ bash_specific_dir_path }}/{{ env_vars_filename }}
+. "{{ bash_specific_dir_path }}/{{ env_vars_filename }}"
 
 # source aliases/functions/etc, but only for interactive shells
-[ "${PS1}" ] && . {{ bash_specific_dir_path }}/{{ aliases_filename }}
+[ "${PS1}" ] && . "{{ bash_specific_dir_path }}/{{ aliases_filename }}"
 

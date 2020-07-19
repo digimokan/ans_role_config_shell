@@ -25,7 +25,7 @@
     filepath: "{{ shell_common_dir_path }}/{{ std_env_filename }}"
     block_lines: |
       # set $ENV to load aliases for interactive system shell:
-      export ENV={{ shell_common_dir_path }}/{{ aliases_filename }}
+      export ENV="{{ shell_common_dir_path }}/{{ aliases_filename }}"
       # set $BASH_ENV to load aliases for non-interactive bash shell:
-      export BASH_ENV={{ bash_specific_dir_path }}/{{ std_env_filename }}
+      export BASH_ENV="{{ bash_specific_dir_path }}/{{ std_env_filename }}"
 
