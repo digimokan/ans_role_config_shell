@@ -10,10 +10,10 @@
 - name: "Configure {{ shell_name }} interactive aliases/functions sourcing"
   include_tasks: add_core_file.yml
   vars:
-    filepath: "{{ shell_specific_dir_path }}/{{ aliases_filename }}"
+    filepath: "{{ shell_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: |
       # source common interactive aliases/functions:
-      . "{{ shell_common_dir_path }}/{{ aliases_filename }}"
+      . "{{ shell_common_dir_path }}/{{ interactive_filename }}"
       # add additional {{ shell_name }}-specific aliases/functions in this file:
 
 - name: "Configure {{ shell_name }} logout actions sourcing"

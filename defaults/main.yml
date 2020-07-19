@@ -27,8 +27,8 @@ sh_specific_dir_path: "{{ home_dir }}/.sh"
 # filename for environment variables files
 env_vars_filename: "env_vars"
 
-# filename for aliases/functions files
-aliases_filename: "aliases"
+# filename for interactive aliases/functions/behavior files
+interactive_filename: "interactive"
 
 # filename for logout-actions files
 logout_actions_filename: "logout_actions"

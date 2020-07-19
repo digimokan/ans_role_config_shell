@@ -8,7 +8,7 @@
 - name: "Configure common interactive aliases/functions sourcing"
   include_tasks: add_core_file.yml
   vars:
-    filepath: "{{ shell_common_dir_path }}/{{ aliases_filename }}"
+    filepath: "{{ shell_common_dir_path }}/{{ interactive_filename }}"
     block_lines: |
       # put all common interactive aliases/functions in this file:
 
@@ -25,7 +25,7 @@
     filepath: "{{ shell_common_dir_path }}/{{ std_env_filename }}"
     block_lines: |
       # set $ENV to load aliases for interactive system shell:
-      export ENV="{{ shell_common_dir_path }}/{{ aliases_filename }}"
+      export ENV="{{ shell_common_dir_path }}/{{ interactive_filename }}"
       # set $BASH_ENV to load aliases for non-interactive bash shell:
       export BASH_ENV="{{ bash_specific_dir_path }}/{{ std_env_filename }}"
 
