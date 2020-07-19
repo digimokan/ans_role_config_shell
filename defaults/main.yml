@@ -43,3 +43,6 @@ std_env_filename: "std_env"
 # file mode for all newly-created common/shell-specific files
 file_mode: '644'
 
+# command to validate shell file syntax
+validate_file: "sh -n %s"
+
