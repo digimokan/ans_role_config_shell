@@ -1,7 +1,7 @@
 - name: "Configure common environment vars sourcing"
   include_tasks: add_core_file.yml
   vars:
-    filepath: "{{ shell_common_dir_path }}/{{ env_var_filename }}"
+    filepath: "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
     block_lines: |
       # export all common/global environment vars in this file:
 
