@@ -1,8 +1,8 @@
-# ans-role-shell-common
+# ans-role-config-shell
 
-Configure a core set of files sourced for _bash_, _zsh_, _ksh_, and _sh_.
+Set up commonly-sourced config files for all shells.
 
-[![Release](https://img.shields.io/github/release/digimokan/ans-role-shell-common.svg?label=release)](https://github.com/digimokan/ans-role-shell-common/releases/latest "Latest Release Notes")
+[![Release](https://img.shields.io/github/release/digimokan/ans-role-config-shell.svg?label=release)](https://github.com/digimokan/ans-role-config-shell/releases/latest "Latest Release Notes")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=license)](LICENSE.md "Project License")
 
 ## Table Of Contents
@@ -17,11 +17,11 @@ Configure a core set of files sourced for _bash_, _zsh_, _ksh_, and _sh_.
 ## Purpose
 
 * Put all _bash_, _zsh_, _ksh_, _sh_ __common__ environment variables into
-  `~/.shell-common/en_vars` file.
+  `~/.config-shell/en_vars` file.
 * Put all _bash_, _zsh_, _ksh_, _sh_ __common__ interactive functions/aliases
-  into `~/.shell-common/aliases` file.
+  into `~/.config-shell/aliases` file.
 * Put all _bash_, _zsh_, __ksh_, sh_ __common__ logout actions into
-  `~/.shell-common/logout_actions` file.
+  `~/.config-shell/logout_actions` file.
 * Put all __non-common__ configuration into `~/.bash/en_vars`, `~/.zsh/en_vars`,
   etc files.
 * Make the __non-common__ files source the __common__ files.
@@ -42,9 +42,9 @@ Configure a core set of files sourced for _bash_, _zsh_, _ksh_, and _sh_.
 
    ```yaml
    # requirements.yml
-   - src: https://github.com/digimokan/ans-role-shell-common
+   - src: https://github.com/digimokan/ans-role-config-shell
      version: master
-     name: shell-common
+     name: config-shell
    ```
 
 2. From the project root directory, install/download the role:
@@ -62,9 +62,9 @@ Configure a core set of files sourced for _bash_, _zsh_, _ksh_, and _sh_.
    - hosts: localhost
      connection: local
      tasks:
-       - name: "Configure shell-common source files for env-vars, aliases"
+       - name: "Set up commonly-sourced config files for all shells"
          include_role:
-           name: shell-common
+           name: config-shell
          vars:
            user_name: "admin"
    ```
@@ -77,7 +77,7 @@ See the role `defaults` file, for overridable vars:
 
 Define these _required_ vars for the role:
 
-  * `user_name`: user to configure the shell-common files for
+  * `user_name`: user to set up the shell config files for
 
 Define these _optional_ vars for the role:
 
@@ -92,7 +92,7 @@ Define these _optional_ vars for the role:
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
-  [Issue](https://github.com/digimokan/ans-role-shell-common/issues).
+  [Issue](https://github.com/digimokan/ans-role-config-shell/issues).
 * Follow the project's [Contributing](CONTRIBUTING.md) guidelines.
 * Respect the project's [Code Of Conduct](CODE_OF_CONDUCT.md).
 

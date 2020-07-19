@@ -6,15 +6,15 @@
 
 1. [GITHUB PAGE] Fork the project repo:
 
-    * click "fork" from https://github.com/digimokan/ans-role-shell-common
+    * click "fork" from https://github.com/digimokan/ans-role-config-shell
 
 2. [LOCAL] Create local repo:
 
-        $ git clone --recurse-submodules https://github.com/[your-github-username]/ans-role-shell-common
+        $ git clone --recurse-submodules https://github.com/[your-github-username]/ans-role-config-shell
 
 3. [LOCAL] Link upstream repo:
 
-        $ git remote add upstream https://github.com/digimokan/ans-role-shell-common
+        $ git remote add upstream https://github.com/digimokan/ans-role-config-shell
 
 ### Development Workflow
 
