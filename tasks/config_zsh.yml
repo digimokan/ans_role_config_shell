@@ -10,3 +10,9 @@
     filepath: "{{ home_dir }}/.zshrc"
     file_template: 'zshrc.j2'
 
+- name: "Replace .zlogout: make it source only core common files"
+  include_tasks: replace_core_file.yml
+  vars:
+    filepath: "{{ home_dir }}/.zlogout"
+    file_template: 'zlogout.j2'
+

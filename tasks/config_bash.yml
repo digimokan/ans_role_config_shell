@@ -10,3 +10,9 @@
     filepath: "{{ home_dir }}/.bashrc"
     file_template: 'bashrc.j2'
 
+- name: "Replace .bash_logout: make it source only core common files"
+  include_tasks: replace_core_file.yml
+  vars:
+    filepath: "{{ home_dir }}/.bash_logout"
+    file_template: 'bash_logout.j2'
+
