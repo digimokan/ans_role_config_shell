@@ -25,7 +25,7 @@
     filepath: "{{ shell_common_dir_path }}/{{ std_env_filename }}"
     block_lines: |
       # set $ENV to load config for interactive system shell:
-      export ENV="{{ shell_common_dir_path }}/{{ interactive_filename }}"
+      export ENV="{{ sh_specific_dir_path }}/{{ interactive_filename }}"
       # set $BASH_ENV to load config for non-interactive bash shell:
       export BASH_ENV="{{ bash_specific_dir_path }}/{{ std_env_filename }}"
 
