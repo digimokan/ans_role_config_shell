@@ -12,23 +12,16 @@ Set up commonly-sourced config files for all shells.
 * [Quick Start](#quick-start)
     * [Load Role Via `ansible-galaxy` Command](#load-role-via-ansible-galaxy-command)
 * [Role Options](#role-options)
+* [Shell Config File Layout](#shell-config-file-layout)
 * [Contributing](#contributing)
 
 ## Purpose
 
-* Put all _bash_, _zsh_, _ksh_, _sh_ __common__ environment variables into
-  `~/.config-shell/en_vars` file.
-* Put all _bash_, _zsh_, _ksh_, _sh_ __common__ interactive functions/aliases
-  into `~/.config-shell/aliases` file.
-* Put all _bash_, _zsh_, __ksh_, sh_ __common__ logout actions into
-  `~/.config-shell/logout_actions` file.
-* Put all __non-common__ configuration into `~/.bash/en_vars`, `~/.zsh/en_vars`,
-  etc files.
-* Make the __non-common__ files source the __common__ files.
-* Make the shell-specific files (`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`,
-  etc) source the __non-common__ files.
-* Configure correct behavior for all combinations of login, non-login,
-  interactive, and non-interactive shell invocations.
+* Set up commonly-sourced files for environment vars, aliases, and
+  console-config (See [File Layout](#shell-config-file-layout)).
+* Do the right thing for all combinations of login, non-login, interactive, and
+  non-interactive shell invocations.
+* Support _bash_, _zsh_, _ksh_, _fish_, and _sh_.
 
 ## Supported Operating Systems
 
@@ -79,15 +72,54 @@ Define these _required_ vars for the role:
 
   * `user_name`: user to set up the shell config files for
 
-Define these _optional_ vars for the role:
+## Shell Config File Layout
 
-  * `time_zone_tz_name`: set the system time zone
-    (see [tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-    for complete list)
-
-    _NOTE: This var may be set to_ '__auto__' _instead of a time zone. The
-           script will then call out to a geo-IP API to determine the time
-           zone._
+```
+├─┬ ~/.shell-config/
+│ │
+│ ├─┬ shell-common/      # common
+│ │ │
+│ │ ├── env_vars         # environment vars: append yours here
+│ │ ├── interactive      # aliases and console-config: append yours here
+│ │ ├── logout_actions   # logout actions: append yours here
+│ │ └── std_env          # $ENV config: do not modify
+│ │
+│ ├─┬ bash/              # bash-only
+│ │ │
+│ │ ├── env_vars         # environment vars: append yours here
+│ │ ├── interactive      # aliases and console-config: append yours here
+│ │ ├── logout_actions   # logout actions: append yours here
+│ │ └── std_env          # $ENV config: do not modify
+│ │
+│ ├─┬ zsh/               # zsh-only
+│ │ │
+│ │ ├── env_vars         # environment vars: append yours here
+│ │ ├── interactive      # aliases and console-config: append yours here
+│ │ ├── logout_actions   # logout actions: append yours here
+│ │ └── std_env          # $ENV config: do not modify
+│ │
+│ ├─┬ ksh/               # ksh/mksh-only
+│ │ │
+│ │ ├── env_vars         # environment vars: append yours here
+│ │ ├── interactive      # aliases and console-config: append yours here
+│ │ ├── logout_actions   # logout actions: append yours here
+│ │ └── std_env          # $ENV config: do not modify
+│ │
+│ ├─┬ fish/              # fish-only
+│ │ │
+│ │ ├── env_vars         # environment vars: append yours here
+│ │ ├── interactive      # aliases and console-config: append yours here
+│ │ ├── logout_actions   # logout actions: append yours here
+│ │ └── std_env          # $ENV config: do not modify
+│ │
+│ └─┬ sh/                # system-shell-only
+│   │
+│   ├── env_vars         # environment vars: append yours here
+│   ├── interactive      # aliases and console-config: append yours here
+│   ├── logout_actions   # logout actions: append yours here
+│   └── std_env          # $ENV config: do not modify
+│
+```
 
 ## Contributing
 
