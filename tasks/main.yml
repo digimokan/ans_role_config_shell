@@ -12,12 +12,15 @@
     - "{{ ['ksh', ksh_specific_dir_path] }}"
     - "{{ ['sh', sh_specific_dir_path] }}"
 
-- name: "Configure standard bash files (.bash_profile, .bashrc)"
+- name: "Configure standard bash files (.bash_profile, .bashrc, .bash_logout)"
   include_tasks: config_bash.yml
 
-- name: "Configure standard zsh files (.zshenv, .zshrc)"
+- name: "Configure standard zsh files (.zshenv, .zshrc, .zlogout)"
   include_tasks: config_zsh.yml
 
 - name: "Configure standard ksh files (.kshrc)"
   include_tasks: config_ksh.yml
+
+- name: "Configure standard sh files (.profile)"
+  include_tasks: config_sh.yml
 
