@@ -17,11 +17,12 @@ Set up commonly-sourced config files for all shells.
 
 ## Purpose
 
-* Set up commonly-sourced files for environment vars, aliases, and
-  console-config (See [File Layout](#shell-config-file-layout)).
+* Set up shell sourcing layout for single environment vars file
+  (`shell-common/env_vars`).
+* Set up aliases and console-config layout, customizable per shell type.
 * Do the right thing for all combinations of login, non-login, interactive, and
   non-interactive shell invocations.
-* Support _bash_, _zsh_, _ksh_, _fish_, and _sh_.
+* Support _bash_, _zsh_, _ksh_, _fish_, and _sh_ shell types.
 
 ## Supported Operating Systems
 
@@ -79,44 +80,44 @@ Define these _required_ vars for the role:
 │ │
 │ ├─┬ shell-common/      # common
 │ │ │
-│ │ ├── env_vars         # environment vars: append yours here
-│ │ ├── interactive      # aliases and console-config: append yours here
-│ │ ├── logout_actions   # logout actions: append yours here
+│ │ ├── env_vars         # environment vars: APPEND YOURS HERE
+│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│ │ ├── logout_actions   # logout actions: APPEND YOURS HERE
 │ │ └── std_env          # $ENV config: do not modify
 │ │
 │ ├─┬ bash/              # bash-only
 │ │ │
-│ │ ├── env_vars         # environment vars: append yours here
-│ │ ├── interactive      # aliases and console-config: append yours here
-│ │ ├── logout_actions   # logout actions: append yours here
+│ │ ├── env_vars         # environment vars: do not modify
+│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│ │ ├── logout_actions   # logout actions: do not modify
 │ │ └── std_env          # $ENV config: do not modify
 │ │
 │ ├─┬ zsh/               # zsh-only
 │ │ │
-│ │ ├── env_vars         # environment vars: append yours here
-│ │ ├── interactive      # aliases and console-config: append yours here
-│ │ ├── logout_actions   # logout actions: append yours here
+│ │ ├── env_vars         # environment vars: do not modify
+│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│ │ ├── logout_actions   # logout actions: do not modify
 │ │ └── std_env          # $ENV config: do not modify
 │ │
 │ ├─┬ ksh/               # ksh-only
 │ │ │
-│ │ ├── env_vars         # environment vars: append yours here
-│ │ ├── interactive      # aliases and console-config: append yours here
-│ │ ├── logout_actions   # logout actions: append yours here
+│ │ ├── env_vars         # environment vars: do not modify
+│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│ │ ├── logout_actions   # logout actions: do not modify
 │ │ └── std_env          # $ENV config: do not modify
 │ │
 │ ├─┬ fish/              # fish-only
 │ │ │
-│ │ ├── env_vars         # environment vars: append yours here
-│ │ ├── interactive      # aliases and console-config: append yours here
-│ │ ├── logout_actions   # logout actions: append yours here
+│ │ ├── env_vars         # environment vars: do not modify
+│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│ │ ├── logout_actions   # logout actions: do not modify
 │ │ └── std_env          # $ENV config: do not modify
 │ │
 │ └─┬ sh/                # system-shell-only
 │   │
-│   ├── env_vars         # environment vars: append yours here
-│   ├── interactive      # aliases and console-config: append yours here
-│   ├── logout_actions   # logout actions: append yours here
+│   ├── env_vars         # environment vars: do not modify
+│   ├── interactive      # aliases and console-config: APPEND YOURS HERE
+│   ├── logout_actions   # logout actions: do not modify
 │   └── std_env          # $ENV config: do not modify
 │
 ```
