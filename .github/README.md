@@ -98,7 +98,7 @@ Define these _required_ vars for the role:
 │ │ ├── logout_actions   # logout actions: append yours here
 │ │ └── std_env          # $ENV config: do not modify
 │ │
-│ ├─┬ ksh/               # ksh/mksh-only
+│ ├─┬ ksh/               # ksh-only
 │ │ │
 │ │ ├── env_vars         # environment vars: append yours here
 │ │ ├── interactive      # aliases and console-config: append yours here
