@@ -20,6 +20,9 @@ zsh_specific_dir_path: "{{ config_dir_path }}/zsh"
 # directory name of dir containing ksh-specific files
 ksh_specific_dir_path: "{{ config_dir_path }}/ksh"
 
+# directory name of dir containing fish-specific files
+fish_specific_dir_path: "{{ config_dir_path }}/fish"
+
 # directory name of dir containing sh-specific files
 sh_specific_dir_path: "{{ config_dir_path }}/sh"
 
