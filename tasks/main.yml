@@ -18,3 +18,6 @@
 - name: "Configure standard zsh files (.zshenv, .zshrc)"
   include_tasks: config_zsh.yml
 
+- name: "Configure standard ksh files (.kshrc)"
+  include_tasks: config_ksh.yml
+
