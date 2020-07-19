@@ -27,5 +27,6 @@
       # set $ENV to load config for interactive system shell:
       export ENV="{{ sh_specific_dir_path }}/{{ interactive_filename }}"
       # set $BASH_ENV to load config for non-interactive bash shell:
-      export BASH_ENV="{{ bash_specific_dir_path }}/{{ std_env_filename }}"
+      export BASH_ENV="{{ shell_common_dir_path }}/{{ std_env_filename }}"
+      # no further modification of this file should be necessary.
 

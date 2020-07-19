@@ -1,12 +1,3 @@
-- name: "Define {{ shell_name }} environment vars"
-  include_tasks: add_core_file.yml
-  vars:
-    filepath: "{{ shell_specific_dir_path }}/{{ env_vars_filename }}"
-    block_lines: |
-      # source common environment vars:
-      . "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
-      # users should not append anything further below this ansible-managed block.
-
 - name: "Configure {{ shell_name }} interactive aliases, console-behavior"
   include_tasks: add_core_file.yml
   vars:
@@ -15,22 +6,4 @@
       # source common interactive aliases, console-behavior:
       . "{{ shell_common_dir_path }}/{{ interactive_filename }}"
       # append {{ shell_name }}-specific aliases and console-behavior below this ansible-managed block.
-
-- name: "Configure {{ shell_name }} logout actions"
-  include_tasks: add_core_file.yml
-  vars:
-    filepath: "{{ shell_specific_dir_path }}/{{ logout_actions_filename }}"
-    block_lines: |
-      # source common logout actions:
-      . "{{ shell_common_dir_path }}/{{ logout_actions_filename }}"
-      # users should not append anything further below this ansible-managed block.
-
-- name: "Configure {{ shell_name }} $ENV, $BASH_ENV var sourcing"
-  include_tasks: add_core_file.yml
-  vars:
-    filepath: "{{ shell_specific_dir_path }}/{{ std_env_filename }}"
-    block_lines: |
-      # source common $ENV, $BASH_ENV configuration:
-      . "{{ shell_common_dir_path }}/{{ std_env_filename }}"
-      # users should not append anything further below this ansible-managed block.
 

@@ -87,38 +87,23 @@ Define these _required_ vars for the role:
 │ │
 │ ├─┬ bash/              # bash-only
 │ │ │
-│ │ ├── env_vars         # environment vars: do not modify
-│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
-│ │ ├── logout_actions   # logout actions: do not modify
-│ │ └── std_env          # $ENV config: do not modify
+│ │ └── interactive      # aliases and console-config: APPEND YOURS HERE
 │ │
 │ ├─┬ zsh/               # zsh-only
 │ │ │
-│ │ ├── env_vars         # environment vars: do not modify
-│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
-│ │ ├── logout_actions   # logout actions: do not modify
-│ │ └── std_env          # $ENV config: do not modify
+│ │ └── interactive      # aliases and console-config: APPEND YOURS HERE
 │ │
 │ ├─┬ ksh/               # ksh-only
 │ │ │
-│ │ ├── env_vars         # environment vars: do not modify
-│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
-│ │ ├── logout_actions   # logout actions: do not modify
-│ │ └── std_env          # $ENV config: do not modify
+│ │ └── interactive      # aliases and console-config: APPEND YOURS HERE
 │ │
 │ ├─┬ fish/              # fish-only
 │ │ │
-│ │ ├── env_vars         # environment vars: do not modify
-│ │ ├── interactive      # aliases and console-config: APPEND YOURS HERE
-│ │ ├── logout_actions   # logout actions: do not modify
-│ │ └── std_env          # $ENV config: do not modify
+│ │ └── interactive      # aliases and console-config: APPEND YOURS HERE
 │ │
 │ └─┬ sh/                # system-shell-only
 │   │
-│   ├── env_vars         # environment vars: do not modify
-│   ├── interactive      # aliases and console-config: APPEND YOURS HERE
-│   ├── logout_actions   # logout actions: do not modify
-│   └── std_env          # $ENV config: do not modify
+│   └── interactive      # aliases and console-config: APPEND YOURS HERE
 │
 ```
 
