@@ -3,29 +3,29 @@
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
     block_lines: |
-      # export all common/global environment vars in this file:
+      # append common/global environment vars below this ansible-managed block.
 
-- name: "Configure common interactive aliases/functions sourcing"
+- name: "Configure common interactive aliases/functions/behavior sourcing"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ interactive_filename }}"
     block_lines: |
-      # put all common interactive aliases/functions in this file:
+      # append common interactive aliases/functions/behavior below this ansible-managed block.
 
 - name: "Configure common logout actions sourcing"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ logout_actions_filename }}"
     block_lines: |
-      # put all common logout actions in this file:
+      # append common logout actions below this ansible-managed block.
 
 - name: "Configure common $ENV, $BASH_ENV var sourcing"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_common_dir_path }}/{{ std_env_filename }}"
     block_lines: |
-      # set $ENV to load aliases for interactive system shell:
+      # set $ENV to load config for interactive system shell:
       export ENV="{{ shell_common_dir_path }}/{{ interactive_filename }}"
-      # set $BASH_ENV to load aliases for non-interactive bash shell:
+      # set $BASH_ENV to load config for non-interactive bash shell:
       export BASH_ENV="{{ bash_specific_dir_path }}/{{ std_env_filename }}"
 

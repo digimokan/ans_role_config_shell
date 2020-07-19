@@ -15,6 +15,6 @@ BASH_ENV=
 # source environment vars
 . "{{ bash_specific_dir_path }}/{{ env_vars_filename }}"
 
-# source aliases/functions/etc, but only for interactive shells
+# source interactive aliases/functions/behavior, but only for interactive shells
 [ "${PS1}" ] && . "{{ bash_specific_dir_path }}/{{ interactive_filename }}"
 

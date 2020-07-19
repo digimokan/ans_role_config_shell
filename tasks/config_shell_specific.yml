@@ -5,16 +5,16 @@
     block_lines: |
       # source common environment vars:
       . "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
-      # add additional {{ shell_name }}-specific env var exports in this file:
+      # append {{ shell_name }}-specific env var exports below this ansible-managed block.
 
-- name: "Configure {{ shell_name }} interactive aliases/functions sourcing"
+- name: "Configure {{ shell_name }} interactive aliases/functions/behavior sourcing"
   include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: |
-      # source common interactive aliases/functions:
+      # source common interactive aliases/functions/behavior:
       . "{{ shell_common_dir_path }}/{{ interactive_filename }}"
-      # add additional {{ shell_name }}-specific aliases/functions in this file:
+      # append {{ shell_name }}-specific aliases/functions/behavior below this ansible-managed block.
 
 - name: "Configure {{ shell_name }} logout actions sourcing"
   include_tasks: add_core_file.yml
@@ -23,7 +23,7 @@
     block_lines: |
       # source common logout actions:
       . "{{ shell_common_dir_path }}/{{ logout_actions_filename }}"
-      # add additional {{ shell_name }}-specific logout actions in this file:
+      # append {{ shell_name }}-specific logout actions below this ansible-managed block.
 
 - name: "Configure {{ shell_name }} $ENV, $BASH_ENV var sourcing"
   include_tasks: add_core_file.yml

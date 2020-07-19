@@ -1,4 +1,4 @@
-- name: "Configure new common files to source"
+- name: "Configure new shell-common files to source"
   include_tasks: config_common.yml
 
 - name: "Configure new shell-specific files to source"
