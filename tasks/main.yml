@@ -10,6 +10,7 @@
     - "{{ ['bash', bash_specific_dir_path] }}"
     - "{{ ['zsh', zsh_specific_dir_path] }}"
     - "{{ ['ksh', ksh_specific_dir_path] }}"
+    - "{{ ['fish', fish_specific_dir_path] }}"
     - "{{ ['sh', sh_specific_dir_path] }}"
 
 - name: "Configure standard bash files (.bash_profile, .bashrc, .bash_logout)"
@@ -20,6 +21,9 @@
 
 - name: "Configure standard ksh files (.kshrc)"
   include_tasks: config_ksh.yml
+
+- name: "Configure standard fish files (.config/fish/config.fish)"
+  include_tasks: config_fish.yml
 
 - name: "Configure standard sh files (.profile)"
   include_tasks: config_sh.yml

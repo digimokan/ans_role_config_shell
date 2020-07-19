@@ -1,0 +1,18 @@
+# DO NOT MAKE CHANGES TO THIS FILE.
+# THIS FILE IS MANAGED BY ANSIBLE.
+# APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
+#   {{ shell_common_dir_path }}/{{ env_vars_filename }}
+#   {{ shell_common_dir_path }}/{{ interactive_filename }}
+# APPEND YOUR FISH-SPECIFIC CUSTOMIZATIONS TO:
+#   {{ fish_specific_dir_path }}/{{ interactive_filename }}
+# See https://github.com/digimokan/ans-role-config-shell
+
+# source $ENV, $BASH_ENV configuration
+. "{{ shell_common_dir_path }}/{{ std_env_filename }}"
+
+# source environment vars
+. "{{ shell_common_dir_path }}/{{ env_vars_filename }}"
+
+# source interactive aliases and console-behavior
+. "{{ fish_specific_dir_path }}/{{ interactive_filename }}"
+

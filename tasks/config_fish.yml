@@ -1,0 +1,6 @@
+- name: "Replace .config/fish/config.fish: make it source only core common files"
+  include_tasks: replace_core_file.yml
+  vars:
+    filepath: "{{ home_dir }}/.config/fish/config.fish"
+    file_template: 'config_fish.j2'
+
