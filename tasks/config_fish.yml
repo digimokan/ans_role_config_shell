@@ -1,6 +1,16 @@
-- name: "Replace .config/fish/config.fish: make it source only core common files"
+- name: "Create {{ config_fish_path }} parent directories, if not exist"
+  file:
+    path: "{{ config_fish_path | dirname }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: "{{ directory_mode }}"
+  become: true
+  become_user: root
+
+- name: "Replace {{ config_fish_path }}: make it source only core common files"
   include_tasks: replace_core_file.yml
   vars:
-    filepath: "{{ home_dir }}/.config/fish/config.fish"
+    filepath: "{{ config_fish_path }}"
     file_template: 'config_fish.j2'
 
