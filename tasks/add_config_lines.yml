@@ -1,0 +1,12 @@
+- name: "Add to bash config: {{ description }}"
+  blockinfile:
+    path: "{{ full_bash_specific_dir_path }}/{{ interactive_filename }}"
+    insertafter: EOF
+    block: "{{ config_lines }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ description }}"
+    create: no
+    state: present
+    validate: "{{ validate_file }}"
+  become: true
+  become_user: root
+
