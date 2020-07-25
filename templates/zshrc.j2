@@ -1,11 +1,11 @@
 # DO NOT MAKE CHANGES TO THIS FILE.
 # THIS FILE IS MANAGED BY ANSIBLE.
 # APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
-#   {{ shell_common_dir_path }}/{{ interactive_filename }}
+#   {{ full_shell_common_dir_path }}/{{ interactive_filename }}
 # APPEND YOUR ZSH-SPECIFIC CUSTOMIZATIONS TO:
-#   {{ zsh_specific_dir_path }}/{{ interactive_filename }}
+#   {{ full_zsh_specific_dir_path }}/{{ interactive_filename }}
 # See https://github.com/digimokan/ans-role-config-shell
 
 # source interactive aliases and console-behavior
-. "{{ zsh_specific_dir_path }}/{{ interactive_filename }}"
+. "{{ rel_zsh_specific_dir_path }}/{{ interactive_filename }}"
 

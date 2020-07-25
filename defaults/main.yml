@@ -6,25 +6,38 @@
 home_dir: "/home/{{ user_name }}"
 
 # top-level shell-config directory path
-config_dir_path: "{{ home_dir }}/.shell-config"
+config_dir_name: ".shell-config"
+config_dir_path: "{{ home_dir }}/{{ config_dir_name }}"
 
-# directory name of dir containing shell-common files
-shell_common_dir_path: "{{ config_dir_path }}/shell-common"
+# directory containing shell-common files
+shell_common_dir_name: "shell-common"
+full_shell_common_dir_path: "{{ config_dir_path }}/{{ shell_common_dir_name }}"
+rel_shell_common_dir_path: "${HOME}/{{ config_dir_name }}/{{ shell_common_dir_name }}"
 
-# directory name of dir containing bash-specific files
-bash_specific_dir_path: "{{ config_dir_path }}/bash"
+# directory containing bash-specific files
+bash_specific_dir_name: "bash"
+full_bash_specific_dir_path: "{{ config_dir_path }}/{{ bash_specific_dir_name }}"
+rel_bash_specific_dir_path: "${HOME}/{{ config_dir_name }}/{{ bash_specific_dir_name }}"
 
-# directory name of dir containing zsh-specific files
-zsh_specific_dir_path: "{{ config_dir_path }}/zsh"
+# directory containing zsh-specific files
+zsh_specific_dir_name: "zsh"
+full_zsh_specific_dir_path: "{{ config_dir_path }}/{{ zsh_specific_dir_name }}"
+rel_zsh_specific_dir_path: "${HOME}/{{ config_dir_name }}/{{ zsh_specific_dir_name }}"
 
-# directory name of dir containing ksh-specific files
-ksh_specific_dir_path: "{{ config_dir_path }}/ksh"
+# directory containing ksh-specific files
+ksh_specific_dir_name: "ksh"
+full_ksh_specific_dir_path: "{{ config_dir_path }}/{{ ksh_specific_dir_name }}"
+rel_ksh_specific_dir_path: "${HOME}/{{ config_dir_name }}/{{ ksh_specific_dir_name }}"
 
-# directory name of dir containing fish-specific files
-fish_specific_dir_path: "{{ config_dir_path }}/fish"
+# directory containing fish-specific files
+fish_specific_dir_name: "fish"
+full_fish_specific_dir_path: "{{ config_dir_path }}/{{ fish_specific_dir_name }}"
+rel_fish_specific_dir_path: "${HOME}/{{ config_dir_name }}/{{ fish_specific_dir_name }}"
 
-# directory name of dir containing sh-specific files
-sh_specific_dir_path: "{{ config_dir_path }}/sh"
+# directory containing sh-specific files
+sh_specific_dir_name: "sh"
+full_sh_specific_dir_path: "{{ config_dir_path }}/{{ sh_specific_dir_name }}"
+rel_sh_specific_dir_path: "${HOME}/{{ config_dir_name }}/{{ sh_specific_dir_name }}"
 
 ################################################################################
 # FILENAMES
