@@ -1,0 +1,7 @@
+- name: "Add to common interactive (aliases/etc) config: {{ description }}"
+  include_tasks: add_config_lines.yml
+  vars:
+    shell_type: "common interactive"
+    filepath: "{{ full_shell_common_dir_path }}/{{ interactive_filename }}"
+    block_lines: "{{ config_lines }}"
+
