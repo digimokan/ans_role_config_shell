@@ -1,5 +1,5 @@
-- name: "Log execution of {{ role_name }}, to prevent multiple executions"
+- name: "Log execution of {{ role_name }}_{{ user_name }}, to avoid future exec"
   set_fact:
-    config_shell_role_was_run: true
+    "{{ role_name }}_{{ user_name }}_role_was_run": true
     cacheable: true
 
