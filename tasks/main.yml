@@ -28,3 +28,6 @@
 - name: "Configure standard sh files (.profile)"
   include_tasks: config_sh.yml
 
+- name: "Log role execution, to prevent multiple executions from dependencies"
+  include_tasks: log_role_execution.yml
+
