@@ -1,33 +1,16 @@
-- name: "Configure new shell-common files to source"
-  include_tasks: config_common.yml
+- name: "Initialize users_list to track when role has been run"
+  set_fact:
+    shell_config_users_list: []
+    cacheable: true
+  when: shell_config_users_list is not defined
 
-- name: "Configure new shell-specific files to source"
-  include_tasks: config_shell_specific.yml
-  vars:
-    shell_name: "{{ item[0] }}"
-    shell_specific_dir_path: "{{ item[1] }}"
-  loop:
-    - "{{ ['bash', full_bash_specific_dir_path] }}"
-    - "{{ ['zsh', full_zsh_specific_dir_path] }}"
-    - "{{ ['ksh', full_ksh_specific_dir_path] }}"
-    - "{{ ['fish', full_fish_specific_dir_path] }}"
-    - "{{ ['sh', full_sh_specific_dir_path] }}"
-
-- name: "Configure standard bash files (.bash_profile, .bashrc, .bash_logout)"
-  include_tasks: config_bash.yml
-
-- name: "Configure standard zsh files (.zshenv, .zshrc, .zlogout)"
-  include_tasks: config_zsh.yml
-
-- name: "Configure standard ksh files (.kshrc)"
-  include_tasks: config_ksh.yml
-
-- name: "Configure standard fish files (.config/fish/config.fish)"
-  include_tasks: config_fish.yml
-
-- name: "Configure standard sh files (.profile)"
-  include_tasks: config_sh.yml
-
-- name: "Log role execution, to prevent multiple executions from dependencies"
-  include_tasks: log_role_execution.yml
+- name: "Run shell-config role for {{ user_name }}"
+  block:
+    - name: "Configure shell files for {{ user_name }}"
+      include_tasks: run_config_shell.yml
+    - name: "Add {{ user_name }} to users_list, to track when role has been run"
+      set_fact:
+        shell_config_users_list: "{{ shell_config_users_list + [user_name] }}"
+        cacheable: true
+  when: user_name not in shell_config_users_list
 

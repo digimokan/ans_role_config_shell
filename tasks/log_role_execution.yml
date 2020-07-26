@@ -1,5 +1,0 @@
-- name: "Log execution of {{ role_name }}_{{ user_name }}, to avoid future exec"
-  set_fact:
-    "ans_role_config_shell_{{ user_name }}_role_was_run": true
-    cacheable: true
-
