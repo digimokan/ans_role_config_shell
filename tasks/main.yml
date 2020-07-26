@@ -1,6 +1,7 @@
 - name: "Initialize users_list to track when role has been run"
   set_fact:
     shell_config_users_list: []
+  no_log: true
   when: shell_config_users_list is not defined
 
 - name: "Run shell-config role for {{ user_name }}"
@@ -10,5 +11,6 @@
     - name: "Add {{ user_name }} to users_list, to track when role has been run"
       set_fact:
         shell_config_users_list: "{{ shell_config_users_list + [user_name] }}"
+      no_log: true
   when: user_name not in shell_config_users_list
 
