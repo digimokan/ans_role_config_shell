@@ -1,0 +1,6 @@
+- name: "Add to bash interactive config: {{ description }}"
+  include_tasks: add_config_lines.yml
+  vars:
+    path: "{{ full_bash_specific_dir_path }}/{{ interactive_filename }}"
+    block: "{{ config_lines }}"
+
