@@ -1,6 +1,8 @@
-- name: "Add lines to shell config: {{ description }}"
+- name: "Add lines to {{ shell_type }} config: {{ description }}"
   blockinfile:
+    path: "{{ filepath }}"
     insertafter: EOF
+    block: "{{ block_lines }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ description }}"
     create: no
     state: present
