@@ -10,8 +10,8 @@ Set up commonly-sourced config files for all shells.
 * [Purpose](#purpose)
 * [Supported Operating Systems](#supported-operating-systems)
 * [Quick Start](#quick-start)
-    * [Use From Playbook: Load Role Via `ansible-galaxy` Command](#use-from-playbook:-load-role-via-ansible-galaxy-command)
-    * [Use From Parent Role As Dependency: List In `meta/main.yml`](#use-from-parent-role-as-dependency:-list-in-meta/main.yml)
+    * [Use From Playbook](#use-from-playbook)
+    * [Use From Parent Role As Dependency](#use-from-parent-role-as-dependency)
 * [Role Options](#role-options)
 * [Shell Config File Layout](#shell-config-file-layout)
 * [Contributing](#contributing)
@@ -32,7 +32,7 @@ Set up commonly-sourced config files for all shells.
 
 ## Quick Start
 
-### Use From Playbook: Load Role Via `ansible-galaxy` Command
+### Use From Playbook
 
 1. Create `requirements.yml` in ansible project root, and add this content:
 
@@ -73,7 +73,7 @@ Set up commonly-sourced config files for all shells.
        config_lines: "alias ll='ls -la'"
    ```
 
-### Use From Parent Role As Dependency: List In `meta/main.yml`
+### Use From Parent Role As Dependency
 
 1. List in parent role's `meta/main.yml`, with `never` tag to avoid duplication:
 
@@ -85,7 +85,7 @@ Set up commonly-sourced config files for all shells.
          - never
    ```
 
-2. Call role with step 3 or 4 from [Use From Playbook](#use-from-parent-role-as-dependency:-list-in-meta/main.yml)
+2. Call role with step 3 or 4 from [Use From Playbook](#use-from-playbook)
    section.
 
 ## Role Options
