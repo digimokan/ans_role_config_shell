@@ -22,6 +22,7 @@ Set up commonly-sourced config files for all shells.
 * Set up aliases and console-config layout, customizable per shell type.
 * Do the right thing for all combinations of login, non-login, interactive, and
   non-interactive shell invocations.
+* Provide role "utility tasks" to simplify setting env vars, aliases, etc.
 * Support _bash_, _zsh_, _ksh_, _fish_, and _sh_ shell types.
 
 ## Supported Operating Systems
@@ -38,7 +39,8 @@ Set up commonly-sourced config files for all shells.
    # requirements.yml
    - src: https://github.com/digimokan/ans-role-config-shell
      version: master
-     name: config-shell
+     tags:
+       - never
    ```
 
 2. From the project root directory, install/download the role:
@@ -49,7 +51,7 @@ Set up commonly-sourced config files for all shells.
 
    * _NOTE:_ `--force-with-deps` _ensures subsequent calls download updates_
 
-3. Include the role like any local role, from the project playbook:
+3. Include the main role, to set up the shell config files:
 
    ```yaml
    # playbook.yml
@@ -58,9 +60,22 @@ Set up commonly-sourced config files for all shells.
      tasks:
        - name: "Set up commonly-sourced config files for all shells"
          include_role:
-           name: config-shell
+           name: ans-role-config-shell
          vars:
            user_name: "admin"
+   ```
+
+4. Use a role "utility task" (from the `inc` directory) to add a common alias:
+
+   ```yaml
+   - name: "Add common ls long listing alias"
+     include_role:
+       name: ans-role-config-shell
+       tasks_from: inc/add_common_interactive_lines.yml
+     vars:
+       user_name: "admin"
+       description: "add long listing ls alias"
+       config_lines: "alias ll='ls -la'"
    ```
 
 ## Role Options
