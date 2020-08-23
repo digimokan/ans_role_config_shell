@@ -10,7 +10,8 @@ Set up commonly-sourced config files for all shells.
 * [Purpose](#purpose)
 * [Supported Operating Systems](#supported-operating-systems)
 * [Quick Start](#quick-start)
-    * [Load Role Via `ansible-galaxy` Command](#load-role-via-ansible-galaxy-command)
+    * [Use From Playbook: Load Role Via `ansible-galaxy` Command](#use-from-playbook:-load-role-via-ansible-galaxy-command)
+    * [Use From Parent Role As Dependency: List In `meta/main.yml`](#use-from-parent-role-as-dependency:-list-in-meta/main.yml)
 * [Role Options](#role-options)
 * [Shell Config File Layout](#shell-config-file-layout)
 * [Contributing](#contributing)
@@ -31,7 +32,7 @@ Set up commonly-sourced config files for all shells.
 
 ## Quick Start
 
-### Load Role Via `ansible-galaxy` Command
+### Use From Playbook: Load Role Via `ansible-galaxy` Command
 
 1. Create `requirements.yml` in ansible project root, and add this content:
 
@@ -39,8 +40,6 @@ Set up commonly-sourced config files for all shells.
    # requirements.yml
    - src: https://github.com/digimokan/ans-role-config-shell
      version: master
-     tags:
-       - never
    ```
 
 2. From the project root directory, install/download the role:
@@ -54,15 +53,11 @@ Set up commonly-sourced config files for all shells.
 3. Include the main role, to set up the shell config files:
 
    ```yaml
-   # playbook.yml
-   - hosts: localhost
-     connection: local
-     tasks:
-       - name: "Set up commonly-sourced config files for all shells"
-         include_role:
-           name: ans-role-config-shell
-         vars:
-           user_name: "admin"
+   - name: "Set up commonly-sourced config files for all shells"
+     include_role:
+       name: ans-role-config-shell
+     vars:
+       user_name: "admin"
    ```
 
 4. Use a role "utility task" (from the `inc` directory) to add a common alias:
@@ -77,6 +72,21 @@ Set up commonly-sourced config files for all shells.
        description: "add long listing ls alias"
        config_lines: "alias ll='ls -la'"
    ```
+
+### Use From Parent Role As Dependency: List In `meta/main.yml`
+
+1. List in parent role's `meta/main.yml`, with `never` tag to avoid duplication:
+
+   ```yaml
+   dependencies:
+     - src: https://github.com/digimokan/ans-role-config-shell
+       version: master
+       tags:
+         - never
+   ```
+
+2. Call role with step 3 or 4 from [Use From Playbook](#use-from-parent-role-as-dependency:-list-in-meta/main.yml)
+   section.
 
 ## Role Options
 
