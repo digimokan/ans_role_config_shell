@@ -1,8 +1,8 @@
-# ans-role-config-shell
+# ans_role_config_shell
 
 Set up commonly-sourced config files for all shells.
 
-[![Release](https://img.shields.io/github/release/digimokan/ans-role-config-shell.svg?label=release)](https://github.com/digimokan/ans-role-config-shell/releases/latest "Latest Release Notes")
+[![Release](https://img.shields.io/github/release/digimokan/ans_role_config_shell.svg?label=release)](https://github.com/digimokan/ans_role_config_shell/releases/latest "Latest Release Notes")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=license)](LICENSE.md "Project License")
 
 ## Table Of Contents
@@ -38,8 +38,7 @@ Set up commonly-sourced config files for all shells.
 
    ```yaml
    # requirements.yml
-   - src: https://github.com/digimokan/ans-role-config-shell
-     version: master
+   - src: https://github.com/digimokan/ans_role_config_shell
    ```
 
 2. From the project root directory, install/download the role:
@@ -55,7 +54,7 @@ Set up commonly-sourced config files for all shells.
    ```yaml
    - name: "Set up commonly-sourced config files for all shells"
      include_role:
-       name: ans-role-config-shell
+       name: ans_role_config_shell
      vars:
        user_name: "admin"
    ```
@@ -65,7 +64,7 @@ Set up commonly-sourced config files for all shells.
    ```yaml
    - name: "Add common ls long listing alias"
      include_role:
-       name: ans-role-config-shell
+       name: ans_role_config_shell
        tasks_from: inc/add_common_interactive_lines.yml
      vars:
        user_name: "admin"
@@ -79,8 +78,7 @@ Set up commonly-sourced config files for all shells.
 
    ```yaml
    dependencies:
-     - src: https://github.com/digimokan/ans-role-config-shell
-       version: master
+     - src: https://github.com/digimokan/ans_role_config_shell
        tags:
          - never
    ```
@@ -135,7 +133,7 @@ Define these _required_ vars for the role:
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
-  [Issue](https://github.com/digimokan/ans-role-config-shell/issues).
+  [Issue](https://github.com/digimokan/ans_role_config_shell/issues).
 * Follow the project's [Contributing](CONTRIBUTING.md) guidelines.
 * Respect the project's [Code Of Conduct](CODE_OF_CONDUCT.md).
 
