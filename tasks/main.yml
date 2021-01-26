@@ -1,14 +1,14 @@
 - name: "Initialize users_list to track when role has been run"
-  set_fact:
+  ansible.builtin.set_fact:
     shell_config_users_list: []
   when: shell_config_users_list is not defined
 
 - name: "Run shell-config role for {{ user_name }}"
   block:
     - name: "Configure shell files for {{ user_name }}"
-      include_tasks: run_config_shell.yml
+      ansible.builtin.include_tasks: run_config_shell.yml
     - name: "Add {{ user_name }} to users_list, to track when role has been run"
-      set_fact:
+      ansible.builtin.set_fact:
         shell_config_users_list: "{{ shell_config_users_list + [user_name] }}"
   when: user_name not in shell_config_users_list
 

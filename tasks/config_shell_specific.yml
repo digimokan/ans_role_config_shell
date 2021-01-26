@@ -1,5 +1,5 @@
 - name: "Configure {{ shell_name }} interactive aliases, console-behavior"
-  include_tasks: add_core_file.yml
+  ansible.builtin.include_tasks: add_core_file.yml
   vars:
     filepath: "{{ shell_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: |

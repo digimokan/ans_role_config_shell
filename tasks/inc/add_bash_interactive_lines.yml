@@ -1,5 +1,5 @@
 - name: "Add to bash interactive config: {{ description }}"
-  include_tasks: add_config_lines.yml
+  ansible.builtin.include_tasks: add_config_lines.yml
   vars:
     shell_type: "bash interactive"
     filepath: "{{ full_bash_specific_dir_path }}/{{ interactive_filename }}"

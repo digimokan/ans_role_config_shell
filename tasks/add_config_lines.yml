@@ -1,5 +1,5 @@
 - name: "Add lines to {{ shell_type }} config: {{ description }}"
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: "{{ filepath }}"
     insertafter: EOF
     block: "{{ block_lines }}"

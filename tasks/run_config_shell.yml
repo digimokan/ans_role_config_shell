@@ -1,8 +1,8 @@
 - name: "Configure new shell-common files to source"
-  include_tasks: config_common.yml
+  ansible.builtin.include_tasks: config_common.yml
 
 - name: "Configure new shell-specific files to source"
-  include_tasks: config_shell_specific.yml
+  ansible.builtin.include_tasks: config_shell_specific.yml
   vars:
     shell_name: "{{ item[0] }}"
     shell_specific_dir_path: "{{ item[1] }}"
@@ -14,17 +14,17 @@
     - "{{ ['sh', full_sh_specific_dir_path] }}"
 
 - name: "Configure standard bash files (.bash_profile, .bashrc, .bash_logout)"
-  include_tasks: config_bash.yml
+  ansible.builtin.include_tasks: config_bash.yml
 
 - name: "Configure standard zsh files (.zshenv, .zshrc, .zlogout)"
-  include_tasks: config_zsh.yml
+  ansible.builtin.include_tasks: config_zsh.yml
 
 - name: "Configure standard ksh files (.kshrc)"
-  include_tasks: config_ksh.yml
+  ansible.builtin.include_tasks: config_ksh.yml
 
 - name: "Configure standard fish files (.config/fish/config.fish)"
-  include_tasks: config_fish.yml
+  ansible.builtin.include_tasks: config_fish.yml
 
 - name: "Configure standard sh files (.profile)"
-  include_tasks: config_sh.yml
+  ansible.builtin.include_tasks: config_sh.yml
 

@@ -1,26 +1,26 @@
 - name: "Define common environment vars"
-  include_tasks: add_core_file.yml
+  ansible.builtin.include_tasks: add_core_file.yml
   vars:
     filepath: "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
     block_lines: |
       # append common/global environment vars below this ansible-managed block.
 
 - name: "Configure common interactive aliases and console-behavior"
-  include_tasks: add_core_file.yml
+  ansible.builtin.include_tasks: add_core_file.yml
   vars:
     filepath: "{{ full_shell_common_dir_path }}/{{ interactive_filename }}"
     block_lines: |
       # append common interactive aliases, console-behavior below this ansible-managed block.
 
 - name: "Configure common logout actions"
-  include_tasks: add_core_file.yml
+  ansible.builtin.include_tasks: add_core_file.yml
   vars:
     filepath: "{{ full_shell_common_dir_path }}/{{ logout_actions_filename }}"
     block_lines: |
       # append common logout actions below this ansible-managed block.
 
 - name: "Configure common $ENV, $BASH_ENV var sourcing"
-  include_tasks: add_core_file.yml
+  ansible.builtin.include_tasks: add_core_file.yml
   vars:
     filepath: "{{ full_shell_common_dir_path }}/{{ std_env_filename }}"
     block_lines: |

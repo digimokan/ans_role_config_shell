@@ -1,5 +1,5 @@
 - name: "Add to ksh interactive config: {{ description }}"
-  include_tasks: add_config_lines.yml
+  ansible.builtin.include_tasks: add_config_lines.yml
   vars:
     shell_type: "ksh interactive"
     filepath: "{{ full_ksh_specific_dir_path }}/{{ interactive_filename }}"

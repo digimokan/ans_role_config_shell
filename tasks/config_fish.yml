@@ -1,5 +1,5 @@
 - name: "Create {{ config_fish_path }} parent directories, if not exist"
-  file:
+  ansible.builtin.file:
     path: "{{ config_fish_path | dirname }}"
     state: directory
     owner: "{{ user_name }}"
@@ -9,7 +9,7 @@
   become_user: root
 
 - name: "Replace {{ config_fish_path }}: make it source only core common files"
-  include_tasks: replace_core_file.yml
+  ansible.builtin.include_tasks: replace_core_file.yml
   vars:
     filepath: "{{ config_fish_path }}"
     file_template: 'config_fish.j2'

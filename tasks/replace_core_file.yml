@@ -1,5 +1,5 @@
 - name: "Replace '{{ filepath }}'"
-  template:
+  ansible.builtin.template:
     dest: "{{ filepath }}"
     src: "{{ file_template }}"
     owner: "{{ user_name }}"

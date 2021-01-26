@@ -53,7 +53,7 @@ Set up commonly-sourced config files for all shells.
 
    ```yaml
    - name: "Set up commonly-sourced config files for all shells"
-     include_role:
+     ansible.builtin.include_role:
        name: ans_role_config_shell
      vars:
        user_name: "admin"
@@ -63,7 +63,7 @@ Set up commonly-sourced config files for all shells.
 
    ```yaml
    - name: "Add common ls long listing alias"
-     include_role:
+     ansible.builtin.include_role:
        name: ans_role_config_shell
        tasks_from: inc/add_common_interactive_lines.yml
      vars:
