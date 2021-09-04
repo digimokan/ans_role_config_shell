@@ -4,4 +4,5 @@
     shell_type: "common env vars"
     filepath: "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
     block_lines: "{{ config_lines }}"
+    shell_specific_validate_cmd: "sh -n %s"
 

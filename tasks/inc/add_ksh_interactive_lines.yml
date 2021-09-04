@@ -4,4 +4,5 @@
     shell_type: "ksh interactive"
     filepath: "{{ full_ksh_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: "{{ config_lines }}"
+    shell_specific_validate_cmd: "ksh -n %s"
 

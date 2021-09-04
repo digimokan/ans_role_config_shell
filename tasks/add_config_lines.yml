@@ -6,7 +6,7 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ description }}"
     create: no
     state: present
-    validate: "{{ validate_file }}"
+    validate: "{{ shell_specific_validate_cmd }}"
   become: true
   become_user: root
 
