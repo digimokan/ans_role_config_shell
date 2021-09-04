@@ -4,6 +4,6 @@
     filepath: "{{ shell_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: |
       # source common interactive aliases, console-behavior:
-      . "{{ rel_shell_common_dir_path }}/{{ interactive_filename }}"
+      . "{{ full_shell_common_dir_path }}/{{ interactive_filename }}"
       # append {{ shell_name }}-specific aliases and console-behavior below this ansible-managed block.
 
