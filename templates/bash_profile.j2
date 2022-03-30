@@ -1,3 +1,4 @@
+# vim: set filetype=sh:
 # DO NOT MAKE CHANGES TO THIS FILE.
 # THIS FILE IS MANAGED BY ANSIBLE.
 # APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
@@ -9,6 +10,7 @@
 # See https://github.com/digimokan/ans-role-config-shell
 
 # source $ENV, $BASH_ENV configuration
+# shellcheck source=/dev/null
 . "{{ full_shell_common_dir_path }}/{{ std_env_filename }}"
 
 # prevent $BASH_ENV sourcing in future calls
