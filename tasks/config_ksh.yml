@@ -3,4 +3,5 @@
   vars:
     filepath: "{{ home_dir }}/.kshrc"
     file_template: 'kshrc.j2'
+    validate: "{{ validate_sh }}"
 
