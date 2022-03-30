@@ -5,7 +5,6 @@
     block: "{{ block_lines }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ filepath }}"
     owner: "{{ user_name }}"
-    group: "{{ user_name }}"
     mode: "{{ file_mode }}"
     create: yes
     state: present
