@@ -13,4 +13,5 @@
   vars:
     filepath: "{{ config_fish_path }}"
     file_template: 'config_fish.j2'
+    validate: "{{ validate_fish }}"
 
