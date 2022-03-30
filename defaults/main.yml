@@ -59,7 +59,7 @@ validate_bash: "bash -n %s"
 validate_zsh: "zsh -n %s"
 
 # command to validate ksh shell config file syntax
-validate_zsh: "ksh -n %s"
+validate_ksh: "ksh -n %s"
 
 # command to validate fish shell config file syntax
 validate_fish: "fish -n %s"
