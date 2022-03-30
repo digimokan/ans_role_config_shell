@@ -14,10 +14,10 @@
 # prevent $BASH_ENV sourcing in future calls
 BASH_ENV=
 
-# source environment vars
+# source common environment vars
 . "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
 
-# source interactive aliases, console-behavior, but only for interactive shells
+# source common/bash-specific interactive aliases and console behavior
 [ "${PS1}" ] && . "{{ full_bash_specific_dir_path }}/{{ interactive_filename }}"
 
 # source common login actions
