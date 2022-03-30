@@ -2,6 +2,7 @@
 # THIS FILE IS MANAGED BY ANSIBLE.
 # APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
 #   {{ full_shell_common_dir_path }}/{{ env_vars_filename }}
+#   {{ full_shell_common_dir_path }}/{{ login_actions_filename }}
 # See https://github.com/digimokan/ans-role-config-shell
 
 # source $ENV, $BASH_ENV configuration
@@ -9,4 +10,7 @@
 
 # source environment vars
 . "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
+
+# source common login actions
+. "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
 

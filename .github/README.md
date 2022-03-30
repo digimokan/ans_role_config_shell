@@ -75,6 +75,7 @@ Set up commonly-sourced config files for all shells.
 
     * Written in shell-agnostic syntax, and runs for all shells:
         * `inc/add_common_env_var_lines`
+        * `inc/add_common_login_actions_lines`
         * `inc/add_common_interactive_lines`
     * Written in a shell-specific syntax, and only runs for specific shell:
         * `inc/add_bash_interactive_lines`

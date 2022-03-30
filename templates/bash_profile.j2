@@ -2,6 +2,7 @@
 # THIS FILE IS MANAGED BY ANSIBLE.
 # APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
 #   {{ full_shell_common_dir_path }}/{{ env_vars_filename }}
+#   {{ full_shell_common_dir_path }}/{{ login_actions_filename }}
 #   {{ full_shell_common_dir_path }}/{{ interactive_filename }}
 # APPEND YOUR BASH-SPECIFIC CUSTOMIZATIONS TO:
 #   {{ full_bash_specific_dir_path }}/{{ interactive_filename }}
@@ -18,4 +19,7 @@ BASH_ENV=
 
 # source interactive aliases, console-behavior, but only for interactive shells
 [ "${PS1}" ] && . "{{ full_bash_specific_dir_path }}/{{ interactive_filename }}"
+
+# source common login actions
+. "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
 

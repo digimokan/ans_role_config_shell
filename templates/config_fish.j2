@@ -2,6 +2,7 @@
 # THIS FILE IS MANAGED BY ANSIBLE.
 # APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
 #   {{ full_shell_common_dir_path }}/{{ env_vars_filename }}
+#   {{ full_shell_common_dir_path }}/{{ login_actions_filename }}
 #   {{ full_shell_common_dir_path }}/{{ interactive_filename }}
 # APPEND YOUR FISH-SPECIFIC CUSTOMIZATIONS TO:
 #   {{ full_fish_specific_dir_path }}/{{ interactive_filename }}
@@ -14,5 +15,12 @@
 . "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
 
 # source interactive aliases and console-behavior
-. "{{ full_fish_specific_dir_path }}/{{ interactive_filename }}"
+if status is-interactive
+  . "{{ full_fish_specific_dir_path }}/{{ interactive_filename }}"
+end
+
+# source common login actions
+if status is-login
+  . "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
+end
 

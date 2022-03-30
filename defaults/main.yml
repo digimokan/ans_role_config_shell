@@ -33,10 +33,13 @@ full_sh_specific_dir_path: "{{ config_dir_path }}/sh"
 # filename for environment variables files
 env_vars_filename: "env_vars"
 
+# filename for commands-to-run-on-login files
+login_actions_filename: "login_actions"
+
 # filename for interactive aliases and console-behavior files
 interactive_filename: "interactive"
 
-# filename for logout-actions files
+# filename for commands-to-run-on-logout files
 logout_actions_filename: "logout_actions"
 
 # filename for ENV config files
