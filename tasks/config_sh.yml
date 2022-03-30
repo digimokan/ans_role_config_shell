@@ -3,5 +3,4 @@
   vars:
     filepath: "{{ home_dir }}/.profile"
     file_template: 'profile.j2'
-    validate: "{{ validate_sh }}"
 

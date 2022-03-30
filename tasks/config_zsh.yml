@@ -3,19 +3,16 @@
   vars:
     filepath: "{{ home_dir }}/.zshenv"
     file_template: 'zshenv.j2'
-    validate: "{{ validate_zsh }}"
 
 - name: "Replace .zshrc: make it source only core common files"
   ansible.builtin.include_tasks: replace_core_file.yml
   vars:
     filepath: "{{ home_dir }}/.zshrc"
     file_template: 'zshrc.j2'
-    validate: "{{ validate_zsh }}"
 
 - name: "Replace .zlogout: make it source only core common files"
   ansible.builtin.include_tasks: replace_core_file.yml
   vars:
     filepath: "{{ home_dir }}/.zlogout"
     file_template: 'zlogout.j2'
-    validate: "{{ validate_zsh }}"
 
