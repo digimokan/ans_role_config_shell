@@ -4,5 +4,5 @@
     shell_type: "common login actions"
     filepath: "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
     block_lines: "{{ config_lines }}"
-    shell_specific_validate_cmd: "sh -n %s"
+    shell_specific_validate_cmd: "{{ validate_sh }}"
 

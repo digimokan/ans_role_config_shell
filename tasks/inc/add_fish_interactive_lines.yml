@@ -4,5 +4,5 @@
     shell_type: "fish interactive"
     filepath: "{{ full_fish_specific_dir_path }}/{{ interactive_filename }}"
     block_lines: "{{ config_lines }}"
-    shell_specific_validate_cmd: "fish -n %s"
+    shell_specific_validate_cmd: "{{ validate_fish }}"
 

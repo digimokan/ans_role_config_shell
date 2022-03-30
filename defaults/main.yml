@@ -46,6 +46,25 @@ logout_actions_filename: "logout_actions"
 std_env_filename: "std_env"
 
 ################################################################################
+# SYNTAX VALIDATION
+################################################################################
+
+# command to validate shell-agnostic config file syntax
+validate_sh: "sh -n %s"
+
+# command to validate bash shell config file syntax
+validate_bash: "bash -n %s"
+
+# command to validate zsh shell config file syntax
+validate_zsh: "zsh -n %s"
+
+# command to validate ksh shell config file syntax
+validate_zsh: "ksh -n %s"
+
+# command to validate fish shell config file syntax
+validate_fish: "fish -n %s"
+
+################################################################################
 # MISC
 ################################################################################
 
@@ -54,12 +73,6 @@ file_mode: '644'
 
 # directory mode for all newly-created directories
 directory_mode: '755'
-
-# command to validate shell-agnostic config file syntax
-validate_sh: "sh -n %s"
-
-# command to validate fish shell config file syntax
-validate_fish: "fish -n %s"
 
 # main fish shell config file path
 config_fish_path: "{{ home_dir }}/.config/fish/config.fish"
