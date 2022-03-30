@@ -6,7 +6,7 @@
     group: "{{ user_name }}"
     mode: "{{ file_mode }}"
     force: yes
-    validate: "{{ validate_file }}"
+    validate: "{{ validate_sh }}"
   become: true
   become_user: root
 

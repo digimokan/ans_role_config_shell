@@ -9,7 +9,7 @@
     mode: "{{ file_mode }}"
     create: yes
     state: present
-    validate: "{{ validate_file }}"
+    validate: "{{ validate_sh }}"
   become: true
   become_user: root
 

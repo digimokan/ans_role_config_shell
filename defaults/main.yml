@@ -55,8 +55,8 @@ file_mode: '644'
 # directory mode for all newly-created directories
 directory_mode: '755'
 
-# command to validate shell file syntax
-validate_file: "sh -n %s"
+# command to validate shell-agnostic config file syntax
+validate_sh: "sh -n %s"
 
 # command to validate fish shell config file syntax
 validate_fish: "fish -n %s"
