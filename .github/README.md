@@ -73,12 +73,14 @@ Set up commonly-sourced config files for all shells.
    ```
 5. The following utility tasks are available:
 
-    * `inc/add_common_env_var_lines`
-    * `inc/add_common_interactive_lines`
-    * `inc/add_bash_interactive_lines`
-    * `inc/add_fish_interactive_lines`
-    * `inc/add_zsh_interactive_lines`
-    * `inc/add_ksh_interactive_lines`
+    * Written in shell-agnostic syntax, and runs for all shells:
+        * `inc/add_common_env_var_lines`
+        * `inc/add_common_interactive_lines`
+    * Written in a shell-specific syntax, and only runs for specific shell:
+        * `inc/add_bash_interactive_lines`
+        * `inc/add_fish_interactive_lines`
+        * `inc/add_zsh_interactive_lines`
+        * `inc/add_ksh_interactive_lines`
 
 ### Use From Parent Role As Dependency
 
