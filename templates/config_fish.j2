@@ -24,3 +24,8 @@ if status is-login
   . "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
 end
 
+# source common logout actions
+function on_exit --on-event fish_exit
+  . "{{ full_shell_common_dir_path }}/{{ logout_actions_filename }}"
+end
+

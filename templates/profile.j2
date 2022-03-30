@@ -14,3 +14,6 @@
 # source common login actions
 . "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
 
+# source common logout actions
+trap '"{{ full_shell_common_dir_path }}/{{ logout_actions_filename }}"; exit' 0
+
