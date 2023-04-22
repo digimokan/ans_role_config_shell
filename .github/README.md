@@ -50,7 +50,7 @@ Set shell-agnostic environment variables, login actions, and logout actions.
 3. Include the main role, to set up the shell config files:
 
    ```yaml
-   - name: "Set up commonly-sourced config files for all shells"
+   - name: "Set shell-agnostic environment variables, login actions, and logout actions"
      ansible.builtin.include_role:
        name: ans_role_config_shell
      vars:
