@@ -1,11 +1,13 @@
-# vim: set filetype=sh:
-# DO NOT MAKE CHANGES TO THIS FILE.
-# THIS FILE IS MANAGED BY ANSIBLE.
-# APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
-#   {{ full_shell_common_dir_path }}/{{ logout_actions_filename }}
-# See https://github.com/digimokan/ans-role-config-shell
+# vim: set filetype=zsh:
+# ANSIBLE-MANAGED CONFIGURATION FILE.
+# SOURCED BY: THE USER'S LOGIN SHELL, ON EXIT, IF THE LOGIN SHELL IS ZSH
 
-# source common logout actions
-# shellcheck source=/dev/null
-. "{{ full_shell_common_dir_path }}/{{ logout_actions_filename }}"
+################################################################################
+# RUN POSIX-COMPATIBLE LOGOUT COMMANDS FOR A ZSH LOGIN SHELL
+################################################################################
 
+{% for action in shell_logout_actions %}
+{{ '# ' }}{{ action.descrip }}
+{{ action.cmd }}
+
+{% endfor %}

@@ -1,8 +1,0 @@
-- name: "Add to zsh interactive config: {{ description }}"
-  ansible.builtin.include_tasks: add_config_lines.yml
-  vars:
-    shell_type: "zsh interactive"
-    filepath: "{{ full_zsh_specific_dir_path }}/{{ interactive_filename }}"
-    block_lines: "{{ config_lines }}"
-    shell_specific_validate_cmd: "{{ validate_zsh }}"
-

@@ -1,0 +1,43 @@
+- name: "Configure bash login config file '{{ bash_login_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ bash_login_file_path }}"
+    src: "bash_profile.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+
+- name: "Configure bourne and ksh login config file '{{ sh_ksh_login_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ sh_ksh_login_file_path }}"
+    src: "profile.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+
+- name: "Configure csh and tcsh login config file '{{ csh_tcsh_login_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ csh_tcsh_login_file_path }}"
+    src: "login.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+
+- name: "Configure zsh login config file '{{ zsh_login_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ zsh_login_file_path }}"
+    src: "zprofile.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+

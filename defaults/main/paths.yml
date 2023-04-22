@@ -1,0 +1,14 @@
+# paths to shell files invoked on login
+bash_login_file_path: "/home/{{ user_name }}/.bash_profile"
+sh_ksh_login_file_path: "/home/{{ user_name }}/.profile"
+csh_tcsh_login_file_path: "/home/{{ user_name }}/.login"
+zsh_login_file_path: "/home/{{ user_name }}/.zprofile"
+
+# paths to shell files invoked on logout
+bash_logout_file_path: "/home/{{ user_name }}/.bash_logout"
+sh_ksh_csh_tcsh_logout_file_path: "/home/{{ user_name }}/.logout"
+zsh_logout_file_path: "/home/{{ user_name }}/.zlogout"
+
+# paths to shell files invoked for special conditions
+zsh_env_file_path: "/home/{{ user_name }}/.zshenv"
+

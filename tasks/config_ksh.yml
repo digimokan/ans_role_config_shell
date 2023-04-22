@@ -1,6 +1,0 @@
-- name: "Replace .kshrc: make it source only core common files"
-  ansible.builtin.include_tasks: replace_core_file.yml
-  vars:
-    filepath: "{{ home_dir }}/.kshrc"
-    file_template: 'kshrc.j2'
-

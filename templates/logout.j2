@@ -1,9 +1,11 @@
-# vim: set filetype=bash:
+# vim: set filetype=csh:
 # ANSIBLE-MANAGED CONFIGURATION FILE.
-# SOURCED BY: THE USER'S LOGIN SHELL, ON EXIT, IF THE LOGIN SHELL IS BASH
+# SOURCED BY:
+#   1. THE USER'S LOGIN SHELL, ON EXIT, IF THE LOGIN SHELL IS CSH OR TCSH
+#   2. BOURNE AND KSH LOGIN SHELLS, ON EXIT, VIA HOOK IN .profile
 
 ################################################################################
-# RUN POSIX-COMPATIBLE LOGOUT COMMANDS FOR A BASH LOGIN SHELL
+# RUN POSIX-COMPATIBLE LOGOUT CMDS FOR A CSH, TCSH, BOURNE, OR KSH LOGIN SHELL
 ################################################################################
 
 {% for action in shell_logout_actions %}

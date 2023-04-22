@@ -1,13 +1,13 @@
 # vim: set filetype=zsh:
 # ANSIBLE-MANAGED CONFIGURATION FILE.
-# SOURCED BY: EVERY INSTANCE OF ZSH
+# SOURCED BY: THE USER'S LOGIN SHELL, IF IT'S ZSH
 
 ################################################################################
-# SET ENVIRONMENT VARS FOR A ZSH LOGIN SHELL
+# RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A ZSH LOGIN SHELL
 ################################################################################
 
-{% for env_var in shell_env_vars %}
-{{ '# ' }}{{ env_var.descrip }}
-{{ 'export ' }}{{ env_var.name }}{{ '="' }}{{ env_var.val }}{{ '"' }}
+{% for action in shell_login_actions %}
+{{ '# ' }}{{ action.descrip }}
+{{ action.cmd }}
 
 {% endfor %}

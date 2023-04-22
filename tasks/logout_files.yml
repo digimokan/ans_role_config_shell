@@ -1,0 +1,33 @@
+- name: "Configure bash logout config file '{{ bash_logout_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ bash_logout_file_path }}"
+    src: "bash_logout.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+
+- name: "Configure bourne, ksh, csh, and tcsh logout config file '{{ sh_ksh_csh_tcsh_logout_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ sh_ksh_csh_tcsh_logout_file_path }}"
+    src: "logout.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+
+- name: "Configure zsh logout config file '{{ zsh_logout_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ zsh_logout_file_path }}"
+    src: "zlogout.j2"
+    owner: "{{ user_name }}"
+    mode: '644'
+    force: yes
+    validate: "sh -n %s"
+  become: true
+  become_user: root
+

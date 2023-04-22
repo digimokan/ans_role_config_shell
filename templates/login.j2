@@ -1,22 +1,22 @@
-# vim: set filetype=bash:
+# vim: set filetype=csh:
 # ANSIBLE-MANAGED CONFIGURATION FILE.
-# SOURCED BY: THE USER'S LOGIN SHELL, IF IT'S BASH
+# SOURCED BY: THE USER'S LOGIN SHELL, IF IT'S CSH or TCSH
 
 ################################################################################
-# SET ENVIRONMENT VARS FOR A BASH LOGIN SHELL
+# SET ENVIRONMENT VARS FOR A CSH OR TCSH LOGIN SHELL
 ################################################################################
 
 {% for env_var in shell_env_vars %}
-{{ '# ' }}{{ env_var.descrip }}
-{{ 'export ' }}{{ env_var.name }}{{ '="' }}{{ env_var.val }}{{ '"' }}
+{{ '# '  }}{{ env_var.descrip }}
+{{ 'setenv ' }}{{ env_var.name }}{{ ' "' }}{{ env_var.val }}{{ '"' }}
 
 {% endfor %}
 ################################################################################
-# RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A BASH LOGIN SHELL
+# RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A CSH OR TCSH LOGIN SHELL
 ################################################################################
 
 {% for action in shell_login_actions %}
-{{ '# ' }}{{ action.descrip }}
+{{ '# '  }}{{ action.descrip }}
 {{ action.cmd }}
 
 {% endfor %}

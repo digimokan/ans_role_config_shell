@@ -1,21 +1,30 @@
 # vim: set filetype=sh:
-# DO NOT MAKE CHANGES TO THIS FILE.
-# THIS FILE IS MANAGED BY ANSIBLE.
-# APPEND YOUR SHELL-COMMON CUSTOMIZATIONS TO:
-#   {{ full_shell_common_dir_path }}/{{ env_vars_filename }}
-#   {{ full_shell_common_dir_path }}/{{ login_actions_filename }}
-# See https://github.com/digimokan/ans-role-config-shell
+# ANSIBLE-MANAGED CONFIGURATION FILE.
+# SOURCED BY: THE USER'S LOGIN SHELL, IF IT'S BOURNE OR KSH
+# shellcheck disable=all
 
-# source $ENV, $BASH_ENV configuration
-# shellcheck source=/dev/null
-. "{{ full_shell_common_dir_path }}/{{ std_env_filename }}"
+################################################################################
+# ADD HOOK FOR EXECUTING LOGOUT ACTIONS ON BOURNE OR KSH LOGIN SHELL EXIT
+# REF: https://docstore.mik.ua/orelly/unix3/upt/ch04_18.htm
+################################################################################
 
-# source common environment vars
-. "{{ full_shell_common_dir_path }}/{{ env_vars_filename }}"
+trap '. "{{ sh_ksh_csh_tcsh_logout_file_path }}"; exit' 0
 
-# source common login actions
-. "{{ full_shell_common_dir_path }}/{{ login_actions_filename }}"
+################################################################################
+# SET ENVIRONMENT VARS FOR A BOURNE OR KSH LOGIN SHELL
+################################################################################
 
-# source common logout actions
-trap '. "{{ full_shell_common_dir_path }}/{{ logout_actions_filename }}"; exit' 0
+{% for env_var in shell_env_vars %}
+{{ '# ' }}{{ env_var.descrip }}
+{{ 'export ' }}{{ env_var.name }}{{ '="' }}{{ env_var.val }}{{ '"' }}
 
+{% endfor %}
+################################################################################
+# RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A BOURNE OR KSH LOGIN SHELL
+################################################################################
+
+{% for action in shell_login_actions %}
+{{ '# ' }}{{ action.descrip }}
+{{ action.cmd }}
+
+{% endfor %}

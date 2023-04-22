@@ -1,0 +1,16 @@
+# define a list of env vars that will be set by the system login shell
+# NOTE: for 'val', make sure double-quotes are escaped
+shell_env_vars: []
+# shell_env_vars:
+#   - { name: 'PASSWORD_LEN', val: '50', descrip: 'use max amount of chars for passwords' }
+
+# define a list of POSIX-compatible login actions run by the sytem login shell
+shell_login_actions: []
+# shell_login_actions:
+#   - { cmd: "date", descrip: 'print the date on login' }
+#
+# define a list of POSIX-compatible logout actions run by the sytem login shell
+shell_logout_actions: []
+# shell_logout_actions:
+#   - { cmd: "pkill xcape", descrip: 'force-stop of xcape on logout' }
+
