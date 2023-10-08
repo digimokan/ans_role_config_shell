@@ -4,7 +4,7 @@
     src: "zshenv.j2"
     owner: "{{ user_name }}"
     mode: '644'
-    force: yes
+    force: true
     validate: "sh -n %s"
   become: true
   become_user: root

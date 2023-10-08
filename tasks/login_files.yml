@@ -4,7 +4,7 @@
     src: "bash_profile.j2"
     owner: "{{ user_name }}"
     mode: '644'
-    force: yes
+    force: true
     validate: "sh -n %s"
   become: true
   become_user: root
@@ -15,7 +15,7 @@
     src: "profile.j2"
     owner: "{{ user_name }}"
     mode: '644'
-    force: yes
+    force: true
     validate: "sh -n %s"
   become: true
   become_user: root
@@ -26,7 +26,7 @@
     src: "login.j2"
     owner: "{{ user_name }}"
     mode: '644'
-    force: yes
+    force: true
   become: true
   become_user: root
 
@@ -36,7 +36,7 @@
     src: "zprofile.j2"
     owner: "{{ user_name }}"
     mode: '644'
-    force: yes
+    force: true
     validate: "sh -n %s"
   become: true
   become_user: root
