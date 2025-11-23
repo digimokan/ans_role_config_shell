@@ -59,13 +59,13 @@ Set shell-agnostic environment variables, login actions, and logout actions.
 
 ## Role Options
 
-See the role `defaults` files for main role vars listings:
+Vars that must be defined when including the role in the playbook:
 
-  * [defaults](../defaults/main/)
+  * [dependencies](../defaults/main/dependencies/main.yml)
 
-Define these _required_ vars for the role:
+Vars with default values, which can be overridden in the playbook:
 
-  * `cfg_shell_user_name`: user to set up the shell config files for
+  * [overridable](../defaults/main/overridable/)
 
 ## Contributing
 
