@@ -54,7 +54,7 @@ Set shell-agnostic environment variables, login actions, and logout actions.
      ansible.builtin.include_role:
        name: ans_role_config_shell
      vars:
-       user_name: "admin"
+       cfg_shell_user_name: "admin"
    ```
 
 ## Role Options
@@ -65,7 +65,7 @@ See the role `defaults` files for main role vars listings:
 
 Define these _required_ vars for the role:
 
-  * `user_name`: user to set up the shell config files for
+  * `cfg_shell_user_name`: user to set up the shell config files for
 
 ## Contributing
 

@@ -1,8 +1,8 @@
-- name: "Configure zsh environment-vars config file '{{ zsh_env_file_path }}'"
+- name: "Configure zsh environment-vars config file '{{ cfg_shell_zsh_env_file_path }}'"
   ansible.builtin.template:
-    dest: "{{ zsh_env_file_path }}"
+    dest: "{{ cfg_shell_zsh_env_file_path }}"
     src: "zshenv.j2"
-    owner: "{{ user_name }}"
+    owner: "{{ cfg_shell_user_name }}"
     mode: '644'
     force: true
     validate: "sh -n %s"

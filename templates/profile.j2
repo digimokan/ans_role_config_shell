@@ -8,13 +8,13 @@
 # REF: https://docstore.mik.ua/orelly/unix3/upt/ch04_18.htm
 ################################################################################
 
-trap '. "{{ sh_ksh_csh_tcsh_logout_file_path }}"; exit' 0
+trap '. "{{ cfg_shell_sh_ksh_csh_tcsh_logout_file_path }}"; exit' 0
 
 ################################################################################
 # SET ENVIRONMENT VARS FOR A BOURNE OR KSH LOGIN SHELL
 ################################################################################
 
-{% for env_var in shell_env_vars %}
+{% for env_var in cfg_shell_env_vars %}
 {{ '# ' }}{{ env_var.descrip }}
 {{ 'export ' }}{{ env_var.name }}{{ '="' }}{{ env_var.val }}{{ '"' }}
 
@@ -23,7 +23,7 @@ trap '. "{{ sh_ksh_csh_tcsh_logout_file_path }}"; exit' 0
 # RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A BOURNE OR KSH LOGIN SHELL
 ################################################################################
 
-{% for action in shell_login_actions %}
+{% for action in cfg_shell_login_actions %}
 {{ '# ' }}{{ action.descrip }}
 {{ action.cmd }}
 

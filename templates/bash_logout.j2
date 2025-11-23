@@ -6,7 +6,7 @@
 # RUN POSIX-COMPATIBLE LOGOUT COMMANDS FOR A BASH LOGIN SHELL
 ################################################################################
 
-{% for action in shell_logout_actions %}
+{% for action in cfg_shell_logout_actions %}
 {{ '# ' }}{{ action.descrip }}
 {{ action.cmd }}
 

@@ -6,7 +6,7 @@
 # SET ENVIRONMENT VARS FOR A CSH OR TCSH LOGIN SHELL
 ################################################################################
 
-{% for env_var in shell_env_vars %}
+{% for env_var in cfg_shell_env_vars %}
 {{ '# '  }}{{ env_var.descrip }}
 {{ 'setenv ' }}{{ env_var.name }}{{ ' "' }}{{ env_var.val }}{{ '"' }}
 
@@ -15,7 +15,7 @@
 # RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A CSH OR TCSH LOGIN SHELL
 ################################################################################
 
-{% for action in shell_login_actions %}
+{% for action in cfg_shell_login_actions %}
 {{ '# '  }}{{ action.descrip }}
 {{ action.cmd }}
 

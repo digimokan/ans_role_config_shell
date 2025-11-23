@@ -6,7 +6,7 @@
 # SET ENVIRONMENT VARS FOR A ZSH LOGIN SHELL
 ################################################################################
 
-{% for env_var in shell_env_vars %}
+{% for env_var in cfg_shell_env_vars %}
 {{ '# ' }}{{ env_var.descrip }}
 {{ 'export ' }}{{ env_var.name }}{{ '="' }}{{ env_var.val }}{{ '"' }}
 

@@ -6,7 +6,7 @@
 # RUN POSIX-COMPATIBLE LOGIN COMMANDS FOR A ZSH LOGIN SHELL
 ################################################################################
 
-{% for action in shell_login_actions %}
+{% for action in cfg_shell_login_actions %}
 {{ '# ' }}{{ action.descrip }}
 {{ action.cmd }}
 
